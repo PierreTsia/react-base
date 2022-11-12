@@ -28,7 +28,10 @@ jobs:
         run: npm ci
       - name: Build Project
         run: npm run build
-      - name: Deploy to GitHub Pages
-        run: echo "Deploying to GitHub Pages"
+      - name: Deploy to Netlify
+        uses: jsmrcaga/action-netlify-deploy@v1.1.0
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.MY_TOKEN_SECRET }}
+          NETLIFY_DEPLOY_TO_PROD: true
 
 
